@@ -1,5 +1,4 @@
 import faiss
-import numpy as np
 import pickle
 import os
 
@@ -11,12 +10,12 @@ class FaissStore:
         self.index = faiss.read_index(
             os.path.join(MODEL_DIR, "faiss_role_index.idx")
         )
-        self.role_embeddings = np.load(
-            os.path.join(MODEL_DIR, "role_embeddings.npy")
-        )
-        self.skill_embeddings = np.load(
-            os.path.join(MODEL_DIR, "skill_embeddings.npy")
-        )
+        # self.role_embeddings = np.load(
+        #     os.path.join(MODEL_DIR, "role_embeddings.npy")
+        # )
+        # self.skill_embeddings = np.load(
+        #     os.path.join(MODEL_DIR, "skill_embeddings.npy")
+        # )
         with open(os.path.join(MODEL_DIR, "job_metadata.bin"), "rb") as f:
             self.metadata = pickle.load(f)
 

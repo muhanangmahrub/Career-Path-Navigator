@@ -1,4 +1,4 @@
-from app.core.state import faiss_index, metadata
+from app.core import faiss_index, metadata
 
 class FaissStore:
     """

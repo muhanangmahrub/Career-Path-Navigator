@@ -1,11 +1,8 @@
 from fastapi import APIRouter
-from app.services.embedding import embed_user_persona
-from app.services.faiss_store import faiss_store
-from app.services.classifier import predict_job_function
-from app.core.state import mlp_vectorizer, selector, model
-from app.services.skill_gap import gap_analyzer
+from app.services import embed_user_persona, faiss_store, predict_job_function, gap_analyzer
+from app.core import mlp_vectorizer, selector, model
 from pydantic import BaseModel, Field
-from app.utils.cleaning import clean_text
+from app.utils import clean_text
 
 class RecommendationRequest(BaseModel):
     user_persona: str = Field(..., description="A description of the user's professional background and aspirations.")

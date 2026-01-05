@@ -2,7 +2,7 @@ import ast
 import numpy as np
 import pandas as pd
 from sklearn.preprocessing import MinMaxScaler
-from app.core.state import vectorizer as tfidf, global_importance_dict
+from app.core import vectorizer as tfidf, global_importance_dict
 
 
 class SkillGapModule:

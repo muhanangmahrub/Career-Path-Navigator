@@ -1,0 +1,15 @@
+pandas
+seaborn
+matplotlib
+spacy
+skillNer
+wordcloud
+scikit-learn
+translate
+ydata-profiling
+fastapi
+uvicorn
+numpy
+pandas
+scikit-learn
+faiss-cpu

@@ -1,5 +1,5 @@
 from fastapi import FastAPI
-from app.api.recommender import router as recommender_router
+from app.api import router as recommender_router
 from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI(title="Career Path Navigator API")

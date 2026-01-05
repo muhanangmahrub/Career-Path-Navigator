@@ -1,4 +1,5 @@
 from app.core import faiss_index, metadata
+from app.utils import clean_job_title_location
 
 class FaissStore:
     """
@@ -25,6 +26,7 @@ class FaissStore:
         results = []
         for dist, idx in zip(D[0], I[0]):
             job = self.metadata[idx].copy()
+            job["job_title"] = clean_job_title_location(job["job_title"])
             job["distance"] = float(dist)
             job["similarity"] = float(1 / (1 + dist))  # optional
             results.append(job)

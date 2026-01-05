@@ -13,6 +13,19 @@ label_map = {
 
 
 def predict_job_function(texts, vectorizer, selector, model):
+    """
+    Memprediksi fungsi pekerjaan berdasarkan teks input.
+
+    Args:
+        texts (list[str]): Daftar teks yang akan diprediksi.
+        vectorizer: Vectorizer terlatih untuk transformasi teks.
+        selector: Feature selector terlatih.
+        model: Model klasifikasi terlatih.
+
+    Returns:
+        labels (list[str]): Label fungsi pekerjaan hasil prediksi.
+        probs (ndarray): Probabilitas prediksi tiap kelas.
+    """
     X = vectorizer.transform(texts)
     X = selector.transform(X).toarray()
     probs = model.predict(X)

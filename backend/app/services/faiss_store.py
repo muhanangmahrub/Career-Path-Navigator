@@ -1,6 +1,18 @@
 from app.core.state import faiss_index, metadata
 
 class FaissStore:
+    """
+    Penyimpanan FAISS untuk rekomendasi pekerjaan.
+
+    Menyediakan fungsi pencarian lowongan pekerjaan yang serupa berdasarkan embedding.
+
+    Attributes:
+        index: Objek indeks FAISS untuk pencarian kemiripan.
+        metadata: Daftar metadata lowongan yang sesuai dengan indeks.
+
+    Methods:
+        search(query_embedding, k): Mencari k lowongan paling mirip berdasarkan embedding kueri.
+    """
     def __init__(self, index=faiss_index, metadata=metadata):
         self.index = index
         self.metadata = metadata

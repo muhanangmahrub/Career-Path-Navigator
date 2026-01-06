@@ -2,7 +2,7 @@ import joblib
 import faiss
 import os
 import pickle
-from tensorflow.keras import models
+from keras import models
 
 # Define paths
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))

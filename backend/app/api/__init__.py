@@ -1,0 +1,1 @@
+from app.api.recommender import router

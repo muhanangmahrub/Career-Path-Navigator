@@ -9,7 +9,7 @@ export const TextAreaComponent = ({
   onClear,
 }) => {
   const placeholder =
-    "Ceritakan latar belakang, pengalaman, serta keterampilan yang Anda miliki, termasuk bidang kerja dan aktivitas yang sering Anda lakukan.";
+    "Ceritakan latar belakang, pengalaman, serta keterampilan yang anda miliki, termasuk bidang kerja dan aktivitas yang sering anda lakukan.";
   const maxChar = 1000;
 
   return (

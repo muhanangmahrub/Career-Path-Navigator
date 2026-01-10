@@ -5,7 +5,7 @@ import { SpinnerComponent } from "../components/Spinner";
 import { TextAreaComponent } from "../components/TextArea";
 import { textResponse } from "../../utils/textRepsonse";
 
-export const PromptSection = () => {
+export const PromptSection = ({ ref }) => {
   const [show, setShow] = useState(false);
   const [text, setText] = useState("");
   const [result, setResult] = useState({});
@@ -65,7 +65,11 @@ export const PromptSection = () => {
   };
 
   return (
-    <section className="min-h-screen flex flex-col" id="prompt">
+    <section
+      className="min-h-screen flex flex-col cursor-default"
+      id="prompt"
+      ref={ref}
+    >
       <h2 className="text-white py-6 text-xl sm:text-2xl font-bold text-center">
         Yukk.. Analisis dirimu
       </h2>

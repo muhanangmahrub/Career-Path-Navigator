@@ -56,7 +56,6 @@ export const OverviewComponent = () => {
               <div
                 key={item.label}
                 className="
-          cursor-default
           flex items-center gap-3
           px-3 py-2
           sm:p-3

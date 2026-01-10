@@ -1,11 +1,9 @@
 import { BookOpenText } from "lucide-react";
 
-export const HeroSection = () => {
-  const scroll = (id) => {
-    id.scrollIntoView({ behavior: "smooth" });
+export const HeroSection = ({ promptRef, overviewRef }) => {
+  const scroll = (ref) => {
+    ref.current?.scrollIntoView({ behavior: "smooth" });
   };
-  const promt = document.getElementById("prompt");
-  const overview = document.getElementById("overview");
 
   return (
     <section className="min-h-screen flex flex-col items-center justify-center px-4 text-center">
@@ -29,7 +27,7 @@ export const HeroSection = () => {
 
       <div className="mt-6 flex gap-3">
         <button
-          onClick={() => scroll(promt)}
+          onClick={() => scroll(promptRef)}
           className="
             px-6 py-3
             rounded-xl
@@ -46,7 +44,7 @@ export const HeroSection = () => {
         </button>
 
         <button
-          onClick={() => scroll(overview)}
+          onClick={() => scroll(overviewRef)}
           className="
             px-6 py-3
             rounded-xl

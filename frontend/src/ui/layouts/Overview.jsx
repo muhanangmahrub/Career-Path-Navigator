@@ -3,7 +3,7 @@ import SkillBarChart from "../components/SkillBarChart";
 import { TabComponent } from "../components/Tab";
 import { OverviewComponent } from "../components/Overview";
 
-export const OverviewSection = () => {
+export const OverviewSection = ({ ref }) => {
   const tabs = [
     {
       key: "1",
@@ -29,7 +29,7 @@ export const OverviewSection = () => {
   const content = tabs.find((tab) => tab.key === activeTab);
 
   return (
-    <section className="min-h-screen bg-white/50 p-4" id="overview">
+    <section className="min-h-screen bg-white/50 p-4" id="overview" ref={ref}>
       <div
         className="
     flex flex-col gap-4
@@ -58,7 +58,7 @@ export const OverviewSection = () => {
 
       <div className="flex items-center justify-center">
         <div
-          className="w-full max-w-6xl bg-white/80 rounded-2xl shadow-lg
+          className="w-full max-w-6xl bg-white/80 rounded-2xl shadow-lg cursor-default
         min-h-[400px]
         md:min-h-[450px]
       "

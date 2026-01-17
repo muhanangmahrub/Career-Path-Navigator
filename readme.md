@@ -28,7 +28,7 @@ Pengguna memasukkan narasi singkat tentang latar belakang, minat, dan pengalaman
 
 - Frontend: React
 - Backend: FastAPI
-- Machine Learning / Data Processing: Python (scikit-learn, NLP, dll.)
+- Machine Learning / Data Processing: Python (numpy, pandas, scikit-learn, NLP, dll.)
 
 ---
 

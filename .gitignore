@@ -1,1 +1,16 @@
 env/
+.DS_Store
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.sqlite3
+*.log
+.vscode/
+.idea/
+.env
+.env.*
+.venv/
+.venv.*/
+venv/
+venv.*/

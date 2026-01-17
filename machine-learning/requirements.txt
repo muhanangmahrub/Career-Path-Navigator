@@ -1,9 +1,25 @@
+# Data Manipulation & Math
+numpy
 pandas
-seaborn
+tqdm
+joblib
+
+# Visualization
 matplotlib
+seaborn
+wordcloud
+networkx
+pyvis
+
+# Natural Language Processing (NLP)
 spacy
 skillNer
-wordcloud
+sentence-transformers
+
+# Machine Learning & Deep Learning
 scikit-learn
-translate
-ydata-profiling
+tensorflow
+faiss-cpu
+
+# Utilities
+python-dotenv

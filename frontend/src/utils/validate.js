@@ -2,14 +2,14 @@ export const validate = (text) => {
   if (!text || text.trim() === "") {
     return {
       error: true,
-      msg: "Ooppss.. deskripsi dirimu tidak boleh kosong",
+      msg: "Ooppss.. deskripsinya kosong nih, ceritain dikit dong tentang dirimu!",
     };
   }
 
   if (text.length < 400) {
     return {
       error: true,
-      msg: "Ooppss.. deskripsi dirimu kamu kurang panjang",
+      msg: "Waduh,, deskripsimu masih kependekan nih, coba tambahin sedikit cerita!",
     };
   }
 
@@ -20,7 +20,7 @@ export const validate = (text) => {
   if (numberRatio > 0.3) {
     return {
       error: true,
-      msg: "Ooppss.. deskripsi dirimu tidak boleh mengandung terlalu banyak angka",
+      msg: "Hayo, jangan kebanyakan angka ya di deskripsimu, nanti kayak kode rahasia",
     };
   }
 
@@ -29,7 +29,7 @@ export const validate = (text) => {
   if (symbolRatio > 0.3) {
     return {
       error: true,
-      msg: "Ooppss.. deskripsi dirimu tidak boleh mengandung terlalu banyak simbol atau karakter aneh",
+      msg: "Hmm, deskripsinya kebanyakan simbol aneh, santai aja, biar gampang dibaca",
     };
   }
 

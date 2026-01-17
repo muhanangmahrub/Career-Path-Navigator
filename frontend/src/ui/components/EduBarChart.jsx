@@ -18,13 +18,13 @@ export default function EduBarChart() {
   const itemsPerPage = 3;
 
   const LEVEL_COLORS = {
-    sma: "#BFD7DF",
-    smk: "#9EC1CD",
-    d3: "#7FAABA",
-    d4: "#5F93A6",
-    s1: "#4E7C8A",
-    s2: "#3D646F",
-    s3: "#2C4C54",
+    sma: "#5A9CB5",
+    smk: "#FACE68",
+    d3: "#FAAC68",
+    d4: "#FA6868",
+    s1: "#76153C",
+    s2: "#5A0E24",
+    s3: "#473472",
   };
 
   const [page, setPage] = useState(0);

@@ -7,40 +7,18 @@ import {
   Tooltip,
   Legend,
 } from "chart.js";
+import top_skill from "../../data/top_skill.json";
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, Tooltip, Legend);
 
 const SkillBarChart = () => {
-  const dummyData = [
-    { skill: "sales", count: 880 },
-    { skill: "english", count: 720 },
-    { skill: "communication", count: 500 },
-    { skill: "management", count: 350 },
-    { skill: "bahasa", count: 310 },
-    { skill: "leadership", count: 280 },
-    { skill: "manage", count: 260 },
-    { skill: "c", count: 250 },
-    { skill: "manager", count: 245 },
-    { skill: "communication skills", count: 235 },
-    { skill: "social medium", count: 230 },
-    { skill: "microsoft office", count: 225 },
-    { skill: "problem solve", count: 220 },
-    { skill: "creative", count: 215 },
-    { skill: "communicate", count: 210 },
-    { skill: "brand", count: 208 },
-    { skill: "accounting", count: 205 },
-    { skill: "plan", count: 202 },
-    { skill: "computer science", count: 200 },
-    { skill: "presentation", count: 195 },
-  ];
-
-  const labels = dummyData.map((item) => item.skill);
-  const values = dummyData.map((item) => item.count);
+  const labels = top_skill.map((item) => item.skill);
+  const values = top_skill.map((item) => item.count);
 
   const gradient = (ctx) => {
     const g = ctx.createLinearGradient(0, 0, 600, 0);
-    g.addColorStop(0, "#373b44");
-    g.addColorStop(1, "#4286f4");
+    g.addColorStop(0, "#7FAABA");
+    g.addColorStop(1, "#203a43");
     return g;
   };
 
@@ -67,7 +45,11 @@ const SkillBarChart = () => {
     },
   };
 
-  return <Bar data={data} options={options} />;
+  return (
+    <div className="h-[400px] md:h-[450px]">
+      <Bar data={data} options={options} />
+    </div>
+  );
 };
 
 export default SkillBarChart;

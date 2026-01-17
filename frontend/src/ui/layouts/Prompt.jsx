@@ -4,6 +4,7 @@ import { BoxResultComponent } from "../components/BoxResult";
 import { SpinnerComponent } from "../components/Spinner";
 import { TextAreaComponent } from "../components/TextArea";
 import { textResponse } from "../../utils/textRepsonse";
+import { validate } from "../../utils/validate";
 
 export const PromptSection = ({ ref }) => {
   const [show, setShow] = useState(false);
@@ -15,16 +16,11 @@ export const PromptSection = ({ ref }) => {
   const api = import.meta.env.VITE_API_URL;
   const local = import.meta.env.VITE_LOCAL_URL;
   const user_persona =
-    "Saya merupakan mahasiswa fresh graduate yang memiliki ketertarikan besar di bidang kreatif dan media. Selama masa perkuliahan, saya aktif mempelajari dasar-dasar desain visual, produksi konten digital, dan komunikasi kreatif. Saya terbiasa mengerjakan tugas kuliah yang berkaitan dengan pembuatan konten media sosial, desain poster, presentasi visual, serta penulisan konten sederhana. Saya memiliki minat kuat pada storytelling visual dan bagaimana sebuah pesan dapat disampaikan secara menarik kepada audiens. Saya terbiasa bekerja dengan tools desain dasar dan senang mengikuti tren media digital serta perkembangan platform sosial. Sebagai fresh graduate, saya terbuka untuk belajar, menerima masukan, dan mengembangkan kemampuan kreatif saya melalui pengalaman kerja di industri kreatif dan media.";
+    "Saya memiliki pengalaman di bidang manufaktur dan operasional, dengan fokus pada pengawasan proses produksi dan efisiensi kerja. Saya terbiasa bekerja di lingkungan yang terstruktur dengan prosedur yang jelas. Saya memahami pentingnya kualitas produk, keselamatan kerja, dan kelancaran operasional dalam proses manufaktur. Saya sering terlibat dalam pemantauan proses produksi, koordinasi dengan tim, serta memastikantarget operasional tercapai. Saya terbiasa bekerja dengan jadwal dan target yang ketat, serta memahami pentingnya kerja sama tim dalam lingkungan produksi. Saya tertarik pada peningkatan efisiensi proses dan optimalisasi operasional. Saya percaya bahwa perbaikan kecil yang konsisten dapat memberikan dampak besar pada produktivitas. Saya ingin terus berkembang di bidang manufacturing dan operations dengan fokus pada proses yang efektif dan berkelanjutan.";
 
   const fetchModel = async () => {
-    if (!text || text.trim() === "") {
-      setResult({
-        error: true,
-        msg: "Ooppss.. deskripsi diri tidak boleh kosong",
-      });
-      return;
-    }
+    const val = validate(text);
+    if (val.error) return setResult(val);
 
     try {
       const res = await fetch(api ? api : local, {
@@ -32,8 +28,8 @@ export const PromptSection = ({ ref }) => {
         headers: {
           "Content-Type": "application/json",
         },
-        // body: JSON.stringify({ user_persona }),
-        body: JSON.stringify({ user_persona: text }),
+        // body: JSON.stringify({ user_persona, top_k: 5 }),
+        body: JSON.stringify({ user_persona: text, top_k: 5 }),
       });
 
       const data = await res.json();
@@ -45,7 +41,7 @@ export const PromptSection = ({ ref }) => {
         msg: "Ooppss.. terjadi kesalahan pada server",
       });
 
-      console.log(err);
+      // console.log(err);
     }
   };
 

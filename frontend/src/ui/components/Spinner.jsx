@@ -1,9 +1,20 @@
+import { useEffect, useState } from "react";
+
 export const SpinnerComponent = () => {
+  const [status, setStatus] = useState("Loading...");
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setStatus("Menghubungkan ke server...");
+    }, 3000);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
-    <div role="status">
+    <div role="status" className="flex-col flex items-center justify-center">
       <svg
         aria-hidden="true"
-        className="w-8 h-8 text-neutral-tertiary animate-spin fill-sky-500"
+        className="w-8 h-8 text-neutral-tertiary animate-spin fill-blue-500"
         viewBox="0 0 100 101"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
@@ -17,7 +28,7 @@ export const SpinnerComponent = () => {
           fill="currentFill"
         />
       </svg>
-      <span className="sr-only">Loading...</span>
+      <p className="text-(--secondary) font-semibold pt-2">{status}</p>
     </div>
   );
 };

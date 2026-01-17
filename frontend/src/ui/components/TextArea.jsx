@@ -9,8 +9,8 @@ export const TextAreaComponent = ({
   onClear,
 }) => {
   const placeholder =
-    "Ceritakan latar belakang, pengalaman, serta keterampilan yang anda miliki, termasuk bidang kerja dan aktivitas yang sering anda lakukan.";
-  const maxChar = 1000;
+    "Ceritakan latar belakang, pengalaman, serta keterampilan yang anda miliki, termasuk bidang kerja dan aktivitas yang sering anda lakukan. (minimal 400 karakter)";
+  const maxChar = 5000;
 
   return (
     <div>
@@ -28,7 +28,7 @@ export const TextAreaComponent = ({
         value={text}
         onChange={onChange}
         disabled={disabled}
-        className={`resize-none min-h-28 border-2 text-heading block w-full p-3.5 rounded-2xl
+        className={`resize-none h-32 border-2 text-heading block w-full p-3.5 rounded-2xl
                     bg-neutral-secondary-medium placeholder:text-body shadow-xs
                    focus:border-(--primary) focus:ring-0 focus:outline-none 
                     ${isLoading ? "border-gray-400" : "border-(--light)"}`}
@@ -63,7 +63,10 @@ export const TextAreaComponent = ({
           </div>
         </div>
 
-        <span className="text-sm text-gray-500 me-3 mt-2">
+        <span
+          className={`text-sm me-3 mt-2
+            ${text.length < 400 ? "text-rose-500" : " text-green-500"}`}
+        >
           {text.length} / {maxChar}
         </span>
       </div>

@@ -1,0 +1,22 @@
+[
+  { "skill": "sales", "count": 880 },
+  { "skill": "english", "count": 720 },
+  { "skill": "communication", "count": 500 },
+  { "skill": "management", "count": 350 },
+  { "skill": "bahasa", "count": 310 },
+  { "skill": "leadership", "count": 280 },
+  { "skill": "manage", "count": 260 },
+  { "skill": "c", "count": 250 },
+  { "skill": "manager", "count": 245 },
+  { "skill": "communication skills", "count": 235 },
+  { "skill": "social medium", "count": 230 },
+  { "skill": "microsoft office", "count": 225 },
+  { "skill": "problem solve", "count": 220 },
+  { "skill": "creative", "count": 215 },
+  { "skill": "communicate", "count": 210 },
+  { "skill": "brand", "count": 208 },
+  { "skill": "accounting", "count": 205 },
+  { "skill": "plan", "count": 202 },
+  { "skill": "computer science", "count": 200 },
+  { "skill": "presentation", "count": 195 }
+]

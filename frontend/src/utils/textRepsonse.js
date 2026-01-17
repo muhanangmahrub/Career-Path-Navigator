@@ -1,15 +1,16 @@
 export const textResponse = (data) => {
-  const labels = data.recommendations.predicted_job_field.labels;
+  let labels = data.recommendations.predicted_job_field.labels;
   const faiss = data.recommendations.faiss
-    .map((item) => item.job_title)
-    .join(", ");
+    .map((item, index) => `${index + 1}. ${item.job_title}`)
+    .join("\n");
   const skill = data.recommendations.skill_gap
     .map((item) => `${item.skill} (${(item.final_score * 100).toFixed(0)}%)`)
     .join(", ");
 
+  labels = labels === "Other" ? "General / Umum" : labels;
   const role = jobRole(labels);
   const jobRecommend = recommendJob(faiss);
-  const skillRecommend = recommendSkill(skill);
+  const skillRecommend = recommendSkill(skill, labels);
 
   return { role, jobRecommend, skillRecommend };
 };
@@ -28,22 +29,22 @@ const jobRole = (label) => {
 
 const recommendJob = (faiss) => {
   const templates = {
-    a: `Berdasarkan hasil analisis, beberapa peran yang paling relevan dengan profil kamu antara lain ${faiss}.`,
-    b: `Profil keahlian kamu menunjukkan kecocokan yang kuat dengan peran seperti ${faiss}.`,
-    c: `Dari pemetaan kemampuan dan minat, posisi ${faiss} menjadi rekomendasi utama untuk kamu pertimbangkan.`,
-    d: `Kombinasi skill yang kamu miliki sesuai dengan kebutuhan peran ${faiss}.`,
+    a: `Berdasarkan hasil analisis, berikut rekomendasi pekerjaan yang paling relevan untuk kamu : \n ${faiss}.`,
+    b: `Profil keahlian kamu menunjukkan kecocokan yang kuat dengan beberapa pekerjaan berikut :\n ${faiss}.`,
+    c: `Dari pemetaan kemampuan dan minat, pekerjaan yang direkomendasikan untuk kamu adalah :\n ${faiss}.`,
+    d: `Kombinasi skill yang kamu miliki sesuai dengan kebutuhan beberapa pekerjaan berikut :\n ${faiss}.`,
   };
 
   const keys = Object.keys(templates);
   return templates[keys[Math.floor(Math.random() * keys.length)]];
 };
 
-const recommendSkill = (skills) => {
+const recommendSkill = (skills, label) => {
   const templates = {
     a: `Beberapa skill utama yang paling dominan dan perlu terus dikembangkan antara lain ${skills}.`,
-    b: `Hasil analisis menunjukkan bahwa skill seperti ${skills} menjadi kekuatan utama kamu.`,
-    c: `Penguasaan skill ${skills} sangat mendukung kesiapan kamu di bidang kreatif dan media.`,
-    d: `Untuk memperkuat posisi kamu di dunia kerja, fokus pengembangan skill ${skills} sangat disarankan.`,
+    b: `Hasil analisis menunjukkan bahwa skill seperti ${skills} menjadi kekuatan utama kamu di bidang ${label}.`,
+    c: `Penguasaan skill ${skills} sangat mendukung kesiapan kamu di bidang ${label}.`,
+    d: `Untuk memperkuat posisi kamu di bidang ${label}, fokus pengembangan skill ${skills} sangat disarankan.`,
   };
 
   const keys = Object.keys(templates);

@@ -1,0 +1,93 @@
+[
+  {
+    "job_function_group": "Creative & Media",
+    "d3": 267,
+    "d4": 267,
+    "s1": 548,
+    "s2": 56,
+    "s3": 3,
+    "sma": 82,
+    "smk": 82
+  },
+  {
+    "job_function_group": "Education",
+    "d3": 62,
+    "d4": 62,
+    "s1": 367,
+    "s2": 129,
+    "s3": 15,
+    "sma": 6,
+    "smk": 6
+  },
+  {
+    "job_function_group": "Engineering",
+    "d3": 420,
+    "d4": 420,
+    "s1": 908,
+    "s2": 174,
+    "s3": 8,
+    "sma": 150,
+    "smk": 150
+  },
+  {
+    "job_function_group": "Finance & Accounting",
+    "d3": 375,
+    "d4": 375,
+    "s1": 1677,
+    "s2": 362,
+    "s3": 17,
+    "sma": 75,
+    "smk": 75
+  },
+  {
+    "job_function_group": "HR & Administration",
+    "d3": 303,
+    "d4": 303,
+    "s1": 1026,
+    "s2": 236,
+    "s3": 23,
+    "sma": 59,
+    "smk": 59
+  },
+
+  {
+    "job_function_group": "Hospitality & Service",
+    "d3": 313,
+    "d4": 313,
+    "s1": 401,
+    "s2": 38,
+    "s3": 1,
+    "sma": 139,
+    "smk": 139
+  },
+  {
+    "job_function_group": "IT & Software",
+    "d3": 943,
+    "d4": 943,
+    "s1": 2468,
+    "s2": 486,
+    "s3": 23,
+    "sma": 161,
+    "smk": 161
+  },
+  {
+    "job_function_group": "Manufacturing & Operations",
+    "d3": 484,
+    "d4": 484,
+    "s1": 1293,
+    "s2": 274,
+    "s3": 8,
+    "sma": 113,
+    "smk": 113
+  },
+  {
+    "job_function_group": "Sales & Marketing",
+    "d3": 2199,
+    "d4": 2199,
+    "s1": 4254,
+    "s2": 784,
+    "s3": 17,
+    "sma": 659,
+    "smk": 659
+  }
+]

@@ -6,6 +6,8 @@
 
 Pengguna memasukkan narasi singkat tentang latar belakang, minat, dan pengalaman, serta daftar keterampilan yang dikuasai. Sistem kemudian memproses informasi tersebut menggunakan pendekatan data-driven untuk memetakan kecocokan dengan role pekerjaan yang paling sesuai.
 
+Next Step: Karierku bisa diakses melalui tautan berikut `https://demo-frontend-chi-eight.vercel.app/`
+
 ---
 
 ## Tujuan
